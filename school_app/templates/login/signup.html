@@ -1,0 +1,20 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>ユーザー登録</title>
+</head>
+<body>
+    <h1>ユーザー登録</h1>
+    <form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <p>場所(0なら教室ほうき 1なら教室机寄せ 2なら教室モップ 3なら黒板 4なら理科室 5なら男子トイレ 6なら女子トイレ 7なら美化委員の仕事)</p>
+        <input type="text" name="place">
+        <p>給食当番ABC</p>
+        <input type="text" name="schoollunch">
+        <p><input type="submit" value="登録"></p>
+    </form>
+</body>
+</html>

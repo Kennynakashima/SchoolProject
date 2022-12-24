@@ -1,0 +1,404 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>あなたの情報</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+      .carousel-text{
+        text-shadow:1px 2px 1px rgb(200, 199, 199);
+      }
+
+        .carousel-inner img{
+        /* position: absolute; */
+        margin-left:auto;
+        margin-right:auto;
+        width:60%;
+        height: 10%;
+        font-family: 'Kosugi Maru', sans-serif;
+  }
+  table{
+  width: 80%;
+  margin-top:30px;
+  margin-left:auto;
+  margin-right:auto;
+  border-collapse:separate;
+  border-spacing: 0;
+  font-family: 'Kosugi Maru', sans-serif;
+  /* filter:drop-shadow(10px 10px 10px rgba(0,0,0,0.6)); */
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+  width:8%;
+}
+table td:first-child{
+  border-radius: 5px 0 0 0;
+  width:8%;
+}
+
+table td:last-child{
+  /* border-radius: 0 5px 0 0; */
+  border-right: 1px solid #db9aea;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#db9aea,#efb1f3);
+  /* border-right: 1px solid #db9aea; */
+  border-left: 1px solid #db9aea;
+  border-top: 1px solid #db9aea;
+  border-bottom: 1px solid #db9aea;
+  font-family: 'Kosugi Maru', sans-serif;
+
+
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 18%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #db9aea;
+  /* border-right: 1px solid #db9aea; */
+  border-bottom: 1px solid #db9aea;
+  border-top:none;
+  /* box-shadow: 0px -3px 5px 1px #e7d0ec) inset; */
+  width: 18%;
+  padding: 10px 0;
+  border-radius: 3px;
+  font-weight:bold;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+#title{
+
+  flex-direction:row;
+  display:flex;
+
+}
+body {
+  background-color:rgb(252, 237, 250);
+  border-radius:3px;
+}
+.current_num{
+  background-color: rgb(255, 254, 254);
+  border-radius:3px;
+}
+.current_num:focus{
+  border-radius:3px;
+  border:solid 2px #EEA34A;
+}
+.current_num:hover{
+  border:solid 2px #EEA34A;
+  border-radius:3px;
+}
+.monday{
+  background-color: rgb(255, 255, 255);
+  border-radius:3px;
+  margin-top:2px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.monday:focus {
+    border:solid 2px #EEA34A;
+}
+.monday:hover {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+.tuesday{
+  background-color: rgb(255, 255, 255);
+  border-radius:3px;
+  margin-top:2px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.tuesday:focus {
+    border:solid 2px #EEA34A;
+}
+.tuesday:hover {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+
+.wednesday{
+  background-color: rgb(255, 255, 255);
+  border-radius:3px;
+  margin-top:2px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.wedenesday:focus {
+    border:solid 2px #EEA34A;
+}
+.wednesday:hover {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+
+.thursday{
+  background-color: rgb(255, 255, 255);
+  border-radius:3px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.thursday:focus {
+    border:solid 3px #EEA34A;
+}
+.thursday:hover {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+.friday{
+    border-radius:3px;
+    margin-top:2px;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+.friday:focus {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+.friday:hover {
+    border:solid 2px #EEA34A;
+    border-radius:3px;
+}
+input:focus{
+  outline: none;
+  border-radius:3px;
+}
+label{
+  font-weight:bold;
+  margin-top:10px;
+  font-size:20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.buttton{
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #db9aea;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #db9aea;    /* 枠の指定 */
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.buttton:hover{
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #db9aea;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+.butttton{
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #db9aea;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #db9aea;    /* 枠の指定 */
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.butttton:hover{
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #db9aea;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+#button2{
+  margin-top:20px;
+  margin-bottom:20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+#botton3{
+  font-family: 'Kosugi Maru', sans-serif;
+  position:relative;
+}
+#button3 textarea{
+  margin-left:150px;
+}
+#button3 label[for="id_message"]{
+  justify-self:flex-start;
+  align-self:flex-start;
+  bottom:500px;
+  position:absolute;
+  width:150px;
+}
+.navbar-brand{
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.nav-link{
+  font-family: 'Kosugi Maru', sans-serif;
+}
+        
+        </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(#db9aea,#efb1f3); height:70px;" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color:rgb(255, 255, 255); font-weight:bold;">学校生活効率化App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+      <div class="collapse navbar-collapse" id="navbarNav" style="padding-top:20px;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <p class="nav-link" id="check" aria-current="page" href="" style="color:rgb(255, 255, 255); font-weight:bold;">ユーザー情報</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://kuwae-j.edumap.jp/" role="button" style="color:rgb(255, 255, 255); font-weight:bold;">学校ホームページ</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout'%}" role="button" style="color:rgb(255, 255, 255); font-weight:bold;">ログアウト</a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link"id="time"style="padding-left:520px;" style="color:rgb(255, 255, 255); font-weight:bold;">現在時刻</p>
+        </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto ">
+          <li class ="nav-item">
+          </li>
+        </ul>
+      </div>
+      
+
+    </div>
+  </nav>
+  </nav>
+
+      <br>
+      <form action="{% url 'teacher' %}" enctype="multipart/form-data" method="POST" id=button1>
+        {% csrf_token %}
+        {{ form_dayduty }}
+        <input type="submit" value="変更" class ="buttton">
+    </form>
+
+      <p>{{error_message}}</p>
+    <form action="{% url 'teacher' %}" enctype="multipart/form-data" method="POST" id=button2>
+        {% csrf_token %}
+        {{ form_schedule }}
+        <input type="submit" value="変更" class ="butttton">
+    </form>
+
+    <form action="{% url 'teacher' %}" enctype="multipart/form-data" method="POST" id=button3>
+      {% csrf_token %}
+      {{ form_message }}
+      <input type="submit" value="変更" class ="butttton">
+  </form>
+
+
+    <table>
+        <tr>
+        <th></th>
+        <th>月曜日</th>
+        <th>火曜日</th>
+        <th>水曜日</th>
+        <th>木曜日</th>
+        <th>金曜日</th>
+        
+        </tr>
+        {% for row in schedule  %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+        {%for r in row%}
+        
+        <td>{{r}}</td>
+        {%endfor%}
+        </tr>
+        {%endfor%}
+        </table>
+
+
+
+
+    <br><br><br><br><br><br><br><br>
+    <h1>
+    </h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;       
+        }
+
+        var csrftoken = getCookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        $(document).ready(function() {
+                    $("#check").on('click', function(){
+                    Swal.fire({
+                        title
+                        
+                        : 'ユーザー情報',
+                        html: `<p>ユーザー名:{{user.username}}</p>
+                                <p>氏名:{{user.last_name}} {{user.first_name}}</p>
+                                <p>メールアドレス:{{user.email}}</p>
+                                <p>{{user.gradenum}}年{{user.classnum}}組{{user.attendancenum}}番</p>
+                                <p>アカウント作成日：{{user.date_joined}}</p>
+
+                        `,
+                        confirmButtonText: '閉じる',
+                        type: 'confirm',
+                        });
+                    });
+                    $(function(){
+                    setInterval(function(){
+                    var now = new Date();
+                    var y = now.getFullYear();
+                    var m = now.getMonth() + 1;
+                    var d = now.getDate();
+                    var w = now.getDay();
+
+                    var wd = ['日', '月', '火', '水', '木', '金', '土'];
+                    var h = now.getHours();
+                    var mi = now.getMinutes();
+                    var s = now.getSeconds();
+                    $('#time').text('現在時刻は'+y + '年' + m + '月' + d + '日' + h + '時' + mi + '分' + s + '秒' + '(' + wd[w] + ')');
+                    }, 1000);
+                    });
+                    $('#time').css({'font-weight':'bold','color':'white'});
+                });
+    </script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+

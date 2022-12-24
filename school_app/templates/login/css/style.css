@@ -1,0 +1,17 @@
+.carousel .item {
+    height: 10%;
+  }
+  
+  .carousel img {
+    position: absolute;
+    width: 100%;
+  }
+.carousel-inner img{
+     position: absolute;
+     width: 100%;
+  }
+
+p {
+    color:purple;
+
+}
